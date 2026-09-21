@@ -1,6 +1,6 @@
 {
   "name": "採寸チェックシート",
-  "short_name": "採寸",
+  "short_name": "ドアリモ",
   "description": "外装工事現場での採寸記録アプリ",
   "start_url": "./",
   "display": "standalone",
@@ -9,16 +9,22 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "icons/home-20260921-v3/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/home-20260921-v3/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "icons/home-20260921-v3/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

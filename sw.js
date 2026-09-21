@@ -1,10 +1,10 @@
-const CACHE_NAME = 'saisun-v6';
-const ASSETS = [
+const CACHE_NAME = 'saisun-icons-20260921-v3';
+const ASSETS = ['./icons/home-20260921-v3/icon-180.png','./icons/home-20260921-v3/icon-32.png','./icons/home-20260921-v3/icon-maskable-512.png',
   './',
   './index.html',
-  './manifest.json',
-  './icons/icon-512.png',
-  './icons/icon-192.png',
+  './manifest.json?v=icons-20260921-v3',
+  './icons/home-20260921-v3/icon-512.png',
+  './icons/home-20260921-v3/icon-192.png',
   './cloud-backup.js',
   './pdf-zip-lock.js'
 ];
