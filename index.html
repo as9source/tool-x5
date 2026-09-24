@@ -2329,19 +2329,26 @@ async function buildPdfFile() {
     return { file: pdfFile, name: fileName };
 }
 
+function isDesktopDevice() {
+  const ua = navigator.userAgent;
+  if (/Windows NT/i.test(ua)) return true;
+  if (/Macintosh/i.test(ua) && !(navigator.maxTouchPoints > 1)) return true;
+  return false;
+}
+
 async function shareSheet(btn) {
   const origText = btn.textContent;
   btn.textContent = '⏳ 生成中…';
   btn.disabled = true;
   try {
     const { file: pdfFile, name: fileName } = await buildPdfFile();
-    if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+    if (!isDesktopDevice() && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
       await navigator.share({ files: [pdfFile], title: fileName });
     } else {
       const url = URL.createObjectURL(pdfFile);
       const a = document.createElement('a');
       a.href = url; a.download = fileName; a.click();
-      URL.revokeObjectURL(url);
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
       showToast('📥 PDFをダウンロードしました');
     }
   } catch(e) {
